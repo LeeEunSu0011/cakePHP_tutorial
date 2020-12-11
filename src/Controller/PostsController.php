@@ -8,9 +8,16 @@ class PostsController extends AppController {
     //    $this->viewBuilder()->setLayout('test');
 
     //}
+    public $paginate = [
+        'limit' => 2,
+        'order' => [
+            'created' => 'desc'
+        ]
+    ];
 
     public function index(){
-        $posts = $this->Posts->find('all');
+        $posts = $this->paginate($this->Posts->find());
+
         //データ表示
         //dd($posts->toArray());
 
@@ -18,7 +25,7 @@ class PostsController extends AppController {
     }
     
     public function view($id = null){
-        $posts = $this->Posts->get('id');
+        $post = $this->Posts->get($id);
 
         $this->set(compact('post'));
     }

@@ -15,9 +15,23 @@
     <div class="content">
         <?php foreach($posts as $post): ?>
                 <h3><?= $post->title ?></h3>
-                <p><?= $post->description ?></p>
+                <p><?= $post->created->i18nFormat('YYYY年MM月dd日 HH:mm') ?></p>
+                <p><?= h($post->description) ?></p>
+                <a href="/posts/view/<?= $post->id ?>" class="button">記事を読む</a>
+                <?= $this->Html->link('記事を読む', ['controller' => 'Posts', 'action' => 'view', $post->id], ['class' => 'button']) ?>
                 <hr>
         <?php endforeach; ?>
+        <?php if($this->Paginator->total() > 1): ?>
+            <div class="paginator">
+                <ul class="pagination">
+                    <?= $this->Paginator->first('<< 最初') ?>
+                    <?= $this->Paginator->prev('< 前へ') ?>
+                    <?= $this->Paginator->numbers() ?>
+                    <?= $this->Paginator->next('次へ >') ?>
+                    <?= $this->Paginator->last('最後 >>') ?>
+                </ul>
+            </div>
+        <?php endif ?>
     </div>
 </body>
 </html>
