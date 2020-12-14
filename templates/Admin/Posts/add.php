@@ -13,10 +13,6 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="posts form content">
-            <form action="">
-                <input type="hidden" name="_csrfToken" value="<?= $this->request->getAttribute('csrfToken')?>">
-            </form>
-
             <?= $this->Form->create($post) ?>
             <fieldset>
                 <legend><?= __('Add Post') ?></legend>

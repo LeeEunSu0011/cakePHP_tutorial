@@ -102,8 +102,6 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
                 'httponly' => true,
             ]))
             
-            ->add(new CsrfProtectionMiddleware())
-
             ->add(new AuthenticationMiddleware($this));
 
         return $middlewareQueue;
