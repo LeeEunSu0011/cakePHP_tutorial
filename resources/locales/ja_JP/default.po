@@ -116,7 +116,7 @@ msgstr ""
 #: Admin/Posts/index.php:32
 #: Admin/Users/index.php:32
 msgid "Edit"
-msgstr ""
+msgstr "追加"
 
 #: Admin/Posts/index.php:42
 #: Admin/Users/index.php:42
@@ -208,11 +208,11 @@ msgstr ""
 
 #: Admin/Users/index.php:9
 msgid "Users"
-msgstr ""
+msgstr "ユーザー"
 
 #: Admin/Users/login.php:15
 msgid "Login"
-msgstr ""
+msgstr "ログイン"
 
 #: Admin/Users/view.php:12
 msgid "Delete User"
@@ -228,5 +228,5 @@ msgstr "パスワード"
 
 #: layout/error.php:38
 msgid "Back"
-msgstr ""
+msgstr "以前"
 

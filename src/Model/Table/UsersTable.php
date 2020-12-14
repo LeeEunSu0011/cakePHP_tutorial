@@ -27,7 +27,7 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class PostsTable extends Table
+class UsersTable extends Table
 {
     /**
      * Initialize method
@@ -39,12 +39,13 @@ class PostsTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('posts');
-        $this->setDisplayField('title');
+        $this->setTable('users');
+        $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
-        $this->belongsTo('Users');
+
+        $this->hasMany('Posts');
     }
 
     /**
@@ -56,32 +57,20 @@ class PostsTable extends Table
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-            ->integer('id')
-            ->allowEmptyString('id', null, 'create');
+        ->integer('id')
+        ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('title')
-            ->maxLength('title', 150)
-            ->requirePresence('title', 'create')
-            ->notEmptyString('title');
+            ->integer('username')
+            ->maxLength('username', 50)
+            ->requirePresence('username', 'create')
+            ->notEmptyString('username');
 
         $validator
-            ->scalar('description')
-            ->requirePresence('description', 'create')
-            ->notEmptyString('description');
-
-        $validator
-            ->scalar('body')
-            ->requirePresence('body', 'create')
-            ->notEmptyString('body');
-
-        $validator
-            ->boolean('published')
-            ->notEmptyString('published');
-
-        $validator
-            ->integer('user_id')
-            ->notEmptyString('user_id');
+            ->scalar('password')
+            ->maxLength('password', 255)
+            ->requirePresence('password', 'create')
+            ->notEmptyString('password');
 
         return $validator;
     }

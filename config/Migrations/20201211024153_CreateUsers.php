@@ -21,5 +21,6 @@ class CreateUsers extends AbstractMigration
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')//編集し自動的に入力
             ->create();
+        $table->create();
     }
 }

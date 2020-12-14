@@ -33,6 +33,12 @@ class UsersSeed extends AbstractSeed
                 'password' => $this->_setPassword('kk11453'),
                 'created' => '2020-05-02 10:00:00',
                 'modified' => '2020-05-02 10:00:00',
+            ],
+            [            
+                'username' => 'name',
+                'password' => $this->_setPassword('name'),
+                'created' => '2020-05-02 10:00:00',
+                'modified' => '2020-05-02 10:00:00',
             ]
         ];
 
