@@ -14,13 +14,26 @@
 <body>
     <div class="content">
         <?php foreach($posts as $post): ?>
-                <h3><?= $post->title ?></h3>
-                <p><?= $post->created->i18nFormat('YYYY年MM月dd日 HH:mm') ?></p>
-                <p><?= h($post->description) ?></p>
-                <p><small>投稿者:<?= h($post->user->username) ?></small></p>
-                <a href="/posts/view/<?= $post->id ?>" class="button">記事を読む</a>
-                <?= $this->Html->link('記事を読む', ['controller' => 'Posts', 'action' => 'view', $post->id], ['class' => 'button']) ?>
-                <hr>
+            <h3><?= h($post->title) ?></h3>
+            <p><?= $post->created->i18nFormat('YYYY年MM月dd日 HH:mm') ?></p>
+            <?= $this->Text->autoParagraph(h($post->description)) ?>
+            <p><small>
+                <?php if(!empty($post->tags)): ?>
+                    <?php foreach($post->tags as $tag): ?>
+                        <?= $this->Html->link($tag->title,['controller' => 'tags', 'action' => 'view',$tag->id]) ?>
+                        <?= $tag !== end($post->tags) ? ',' : ' ' ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+                / 投稿者:<?= h($post->user->username) ?>
+            </small></p>
+            <?= $this->Html->link('記事を読む', [
+                    'action' => 'view',
+                    $post->id
+                ], 
+                [
+                    'class' => 'button'
+                ]) ?>
+            <hr>
         <?php endforeach; ?>
         <?php if($this->Paginator->total() > 1): ?>
             <div class="paginator">

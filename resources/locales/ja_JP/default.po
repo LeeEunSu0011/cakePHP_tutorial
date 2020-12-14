@@ -76,14 +76,14 @@ msgstr ""
 #: Admin/Users/add.php:24
 #: Admin/Users/edit.php:29
 msgid "Submit"
-msgstr ""
+msgstr "追加"
 
 #: Admin/Posts/edit.php:12
 #: Admin/Posts/index.php:33
 #: Admin/Users/edit.php:12
 #: Admin/Users/index.php:33
 msgid "Delete"
-msgstr ""
+msgstr "削除"
 
 #: Admin/Posts/edit.php:14
 #: Admin/Posts/index.php:33
@@ -102,7 +102,7 @@ msgstr ""
 #: Admin/Posts/index.php:8
 #: Admin/Posts/view.php:14
 msgid "New Post"
-msgstr ""
+msgstr "新しい投稿"
 
 #: Admin/Posts/index.php:9
 msgid "Posts"
@@ -111,12 +111,12 @@ msgstr ""
 #: Admin/Posts/index.php:31
 #: Admin/Users/index.php:31
 msgid "View"
-msgstr ""
+msgstr "詳細"
 
 #: Admin/Posts/index.php:32
 #: Admin/Users/index.php:32
 msgid "Edit"
-msgstr "追加"
+msgstr "編集"
 
 #: Admin/Posts/index.php:42
 #: Admin/Users/index.php:42
@@ -126,12 +126,12 @@ msgstr ""
 #: Admin/Posts/index.php:43
 #: Admin/Users/index.php:43
 msgid "previous"
-msgstr ""
+msgstr "以前"
 
 #: Admin/Posts/index.php:45
 #: Admin/Users/index.php:45
 msgid "next"
-msgstr ""
+msgstr "次"
 
 #: Admin/Posts/index.php:46
 #: Admin/Users/index.php:46
